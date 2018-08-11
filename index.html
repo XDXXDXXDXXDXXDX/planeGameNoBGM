@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打灰机</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="game" width="666" height="666"></canvas>
+    <div id="uiIndex">
+        <h1 class="title">打灰机</h1>
+        <h6 class="title">60s真男人v1.2</h6>
+        <div>
+            <button id="startGame" class="btn">开始游戏</button>
+            <button id="gameSetting" class="btn">游戏设置</button>
+            <button id="gameRule" class="btn">游戏说明</button>
+        </div>
+    </div>
+
+    <div id="uiSetting">
+        <h2 class="title">游戏设置</h2>
+        <span>音乐设置</span>
+        <select id="musicSetting" class="setSelect">
+            <option value="open">开启音乐</option>
+            <option value="close">关闭音乐</option>
+        </select>
+        <br/>
+        <span>战机设置</span>
+        <select id="planeSetting" class="setSelect">
+            <option value="plane1">黄金战机</option>
+            <option value="plane2">雷霆战机</option>
+        </select>
+        <br/>
+        <span>背景设置</span>
+        <select id="backgroundSetting" class="setSelect">
+            <option value="1">浩瀚宇宙</option>
+            <option value="2">云雾缭绕</option>
+        </select>
+        <br/>
+        <button id="confirmSetting" class="btn confirmBtn">确认设置</button>
+    </div>
+
+    <div id="uiRule">
+        <h2 class="title">游戏说明</h2>
+        <p class="rule">
+            通过触摸移动飞机<br/>
+            击杀小飞机得90分<br/>
+            击杀大飞机得1000分<br/>
+            被敌机撞击游戏失败<br/>
+            坚持60秒即获得胜利<br/>
+        </p>
+        <button id="confirmRule" class="btn confirmBtn">我明白了</button>
+    </div>
+
+    <div id="uiResult">
+        <h2 class="title">游戏结束</h2>
+        <p class="result">你的得分<span id="score"></span></p>
+        <button id="confirmResult" class="btn confirmBtn">我知道了</button>
+        <button id="again" class="btn">再试一次</button>
+        <span id="win">
+            你获胜了!<br/>
+            实在是太伟大了!<br/>
+            争取获得跟高的分数吧!
+        </span>
+        <span id="lose">
+            你坚持了<span id="keepTime"></span>s!<br/>
+            太不容易了!<br/>
+            再试一次吧!
+        </span>
+    </div>
+
+    <div id="uiScore">
+        <p class="score">得分<span id="gamingScore"></span></p>
+    </div>
+
+    <div id="uiCountDown">
+        <p class="countDown">剩余时间<span id="remainingTime"></span>s</p>
+    </div>
+
+    <script src="js/resource.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/element.js"></script>
+    <script src="js/bullet.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/plane.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
