@@ -18,38 +18,38 @@ var resourceHelper = {
     return this.resources.images[imageName];
   },
   //加载声音
-  soundLoader: function(src, callback) {
-    var sound = new Audio();
-    sound.addEventListener('canplaythrough', callback);
-    sound.src = src;
-    return sound;
-  },
-  //播放音乐/音效
-  playSound: function(sound, config) { 
-    var soundObj = this.resources.sounds[sound];
-    if (!soundObj || !this.enableMusic){
-      return;
-    }
-    config = config || {};
-    // 是否设置循环
-    if(config.loop){
-      soundObj.loop = 'loop';
-    } 
-    soundObj.currentTime = 0;  
-    soundObj.play();
-    return soundObj;
-  },
-  //暂停音乐
-  pauseSound: function(sound) { 
-    var soundObj = this.resources.sounds[sound];
-    soundObj.pause();
-    return soundObj;
-  },
+  // soundLoader: function(src, callback) {
+  //   var sound = new Audio();
+  //   sound.addEventListener('canplaythrough', callback);
+  //   sound.src = src;
+  //   return sound;
+  // },
+  // //播放音乐/音效
+  // playSound: function(sound, config) { 
+  //   var soundObj = this.resources.sounds[sound];
+  //   if (!soundObj || !this.enableMusic){
+  //     return;
+  //   }
+  //   config = config || {};
+  //   // 是否设置循环
+  //   if(config.loop){
+  //     soundObj.loop = 'loop';
+  //   } 
+  //   soundObj.currentTime = 0;  
+  //   soundObj.play();
+  //   return soundObj;
+  // },
+  // //暂停音乐
+  // pauseSound: function(sound) { 
+  //   var soundObj = this.resources.sounds[sound];
+  //   soundObj.pause();
+  //   return soundObj;
+  // },
   //资源加载
   load: function(resources, callback) {
     var images = resources.images;
     var sounds = resources.sounds;
-    var total = images.length + sounds.length;
+    var total = images.length;
     var finish = 0; // 已完成的个数
     // 保存加载后的图片对象和声音对象
     this.resources = {
@@ -73,17 +73,17 @@ var resourceHelper = {
     }
 
     // 遍历加载声音
-    for(var i = 0 ; i < sounds.length; i++) {
-      var name = sounds[i].name;
-      var src = sounds[i].src;
-      self.resources.sounds[name] = self.soundLoader(src, function() {
-        // 加载完成
-        finish++;
-        if( finish == total){
-          //全部加载完成
-          callback(self.resources);
-        }
-      });
-    }
+    // for(var i = 0 ; i < sounds.length; i++) {
+    //   var name = sounds[i].name;
+    //   var src = sounds[i].src;
+    //   self.resources.sounds[name] = self.soundLoader(src, function() {
+    //     // 加载完成
+    //     finish++;
+    //     if( finish == total){
+    //       //全部加载完成
+    //       callback(self.resources);
+        // }
+      // });
+    // }
   }
 }

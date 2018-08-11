@@ -133,7 +133,7 @@ var GAME = {
     if(this.timeCount == 0) {
       this.winOlose = true;
       this.end();
-      resourceHelper.playSound('win');
+      // resourceHelper.playSound('win');
       return;
     }
 
@@ -247,7 +247,7 @@ var GAME = {
       } else {
         if (plane.status === 'normal' && plane.hasCrash(enemy)) {
           plane.booming();
-          resourceHelper.playSound('dieSound');
+          // resourceHelper.playSound('dieSound');
         }
         // 根据怪兽状态判断是否被击中
         switch(enemy.status) {
@@ -256,7 +256,7 @@ var GAME = {
             if (plane.hasHit(enemy)) {
               // 设置爆炸时长展示第一帧
               enemy.live --;
-              resourceHelper.playSound('hitSound');
+              // resourceHelper.playSound('hitSound');
               if (enemy.live === 0) {
                 enemy.booming();
               }
@@ -269,7 +269,7 @@ var GAME = {
             var point = enemy.type === 'big' ? 1000 : 90;
             this.enemies.splice(i, 1);
             this.score += point;
-            resourceHelper.playSound('boomSound');
+            // resourceHelper.playSound('boomSound');
         }
       }
     }
@@ -303,7 +303,7 @@ var GAME = {
     // 先清理画布
     context.clearRect(0, 0, canvasWidth, canvasHeight);
     // 清除声音
-    resourceHelper.pauseSound('gameSound');
+    // resourceHelper.pauseSound('gameSound');
     // 清除定时器
     clearInterval(this.createBigEnemyInterval);
     clearInterval(this.createSmallEnemyInterval);
